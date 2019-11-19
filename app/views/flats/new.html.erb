@@ -1,7 +1,7 @@
 <!-- Create New Flat Form -->
 
 <div class="page-container">
-  <h1>Add a new flat here:</h1>
+  <h1>Add your flat here:</h1>
 
   <div class="form-container offset-3">
     <%= simple_form_for @flat do |f| %>
@@ -9,6 +9,7 @@
       <%= f.input :price_per_night %>
       <%= f.input :capacity %>
       <%= f.input :location %>
+      <%= f.input :photo, as: :file, input_html: { multiple: true} %>
       <%= f.button :submit, class: "submit-button"%>
     <% end %>
   </div>
