@@ -1,0 +1,35 @@
+.form-inputs {
+margin: auto;
+background-color: white;
+padding: 20px;
+box-shadow: 1px 1px 12px -2px rgba(87,87,87,0.56);
+}
+
+// .form-actions {
+//   text-align: center;
+//   padding: 3px 97px;
+// }
+
+h2 {
+  padding: 20px;
+  color: #343a40;
+}
+
+.btn {
+  color: #343a40;
+}
+
+input.btn:hover {
+  color: white;
+}
+
+.end-page {
+  text-align: center;
+  padding: 10px;
+  color: #343a40;
+
+}
+
+.end-page:hover {
+  text-decoration: none;
+}
