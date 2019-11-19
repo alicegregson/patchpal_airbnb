@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_141112) do
     t.string "name"
     t.integer "price_per_night"
     t.integer "capacity"
+    t.integer "rating"
     t.string "location"
     t.bigint "user_id"
     t.datetime "created_at", null: false
