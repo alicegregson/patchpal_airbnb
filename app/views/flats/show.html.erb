@@ -9,29 +9,41 @@
     </div>
   </form>
 
-  <div>
-    <div class="cards">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Breakfast
-      </div>
 
-     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      Lunch
-      </div>
+</div>
 
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-     Dinner
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
-      </div>
+
+<% @flat.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<div class="container">
+
+  <div class="card">
+    <div class="card-body">
+      This is main picture of flat!!!
     </div>
   </div>
+
+    <div class="row">
+      <div class="card">PICTURE</div>
+
+      <div class="card">PICTURE</div>
+
+      <div class="w-100"></div>
+
+      <div class="card">PICTURE</div>
+
+      <div class="card">PICTURE</div>
+    </div>
+  </div>
+
+
+
 </div>
 
 
 
-
-
+<br>
 
 <p>Find me in app/views/flats/show.html.erb</p>
