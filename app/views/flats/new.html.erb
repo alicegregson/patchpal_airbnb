@@ -5,11 +5,11 @@
 
   <div class="form-container offset-3">
     <%= simple_form_for @flat do |f| %>
-      <%= f.input :name %>
-      <%= f.input :price_per_night %>
-      <%= f.input :capacity %>
-      <%= f.input :location %>
-      <%= f.input :photo, as: :file, input_html: { multiple: true} %>
+      <p><%= f.input :name %></p>
+      <p><%= f.input :price_per_night %></p>
+      <p><%= f.input :capacity %></p>
+      <p><%= f.input :location %></p>
+      <p><%= f.input :photo, as: :file, input_html: { multiple: true} %></p>
       <%= f.button :submit, class: "submit-button"%>
     <% end %>
   </div>

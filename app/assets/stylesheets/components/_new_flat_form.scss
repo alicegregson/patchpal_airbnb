@@ -1,6 +1,11 @@
 .page-container {
   background-color: white;
   length: 100%;
+  h1 {
+    color: #484848;
+    padding: 1em 0 1em 1em;
+    font-family: $headers-font;
+  }
 }
 
 .form-container {
@@ -9,6 +14,10 @@
   padding: 2em;
   color: #484848;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  p {
+    font-family: $body-font;
+    color: $gray;
+  }
 }
 
 .submit-button {
@@ -20,7 +29,4 @@
   }
 }
 
-h1 {
-  color: #484848;
-  padding: 1em 0 1em 1em;
-}
+
