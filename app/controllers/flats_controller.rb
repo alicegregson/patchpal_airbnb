@@ -1,5 +1,6 @@
 class FlatsController < ApplicationController
   def index
+    @home = true
     @flats = Flat.all
   end
 
