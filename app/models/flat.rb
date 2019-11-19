@@ -5,5 +5,4 @@ class Flat < ApplicationRecord
   validates :price_per_night, presence: true
   validates :name, presence: true, uniqueness: true
   validates :capacity, presence: true
-  validates :rating, presence: true
 end

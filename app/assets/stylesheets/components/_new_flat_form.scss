@@ -1,0 +1,26 @@
+.page-container {
+  background-color: white;
+  length: 100%;
+}
+
+.form-container {
+  width: 40%;
+  background-color: white;
+  padding: 2em;
+  color: #484848;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.submit-button {
+  background-color: #3B8589;
+  color: white;
+  border-radius: 5px;
+  &:hover {
+    color: white;
+  }
+}
+
+h1 {
+  color: #484848;
+  padding: 1em 0 1em 1em;
+}

@@ -1,2 +1,15 @@
-<h1>Flats#new</h1>
-<p>Find me in app/views/flats/new.html.erb</p>
+<!-- Create New Flat Form -->
+
+<div class="page-container">
+  <h1>Add a new flat here:</h1>
+
+  <div class="form-container offset-3">
+    <%= simple_form_for @flat do |f| %>
+      <%= f.input :name %>
+      <%= f.input :price_per_night %>
+      <%= f.input :capacity %>
+      <%= f.input :location %>
+      <%= f.button :submit, class: "submit-button"%>
+    <% end %>
+  </div>
+</div>
