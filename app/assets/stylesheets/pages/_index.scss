@@ -48,7 +48,7 @@ body {
   }
 }
 
-.cards {
+.cards_ {
   display: flex;
   justify-content: space-between;
 }
@@ -98,6 +98,19 @@ body {
 .info_block {
   height: 500px;
   margin-top: 30px;
-  border-top: solid 1px rgb(230, 230, 230);
+
 }
 
+.info_text {
+  border-bottom: solid 1px rgb(230, 230, 230);
+    h1 {
+    font-size: 25px;
+    font-weight: bolder;
+    color: $main-black;
+    padding-bottom: 16px;
+  }
+}
+
+.push-content-down {
+  height: 100px;
+}
