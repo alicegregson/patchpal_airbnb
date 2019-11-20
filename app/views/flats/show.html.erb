@@ -3,14 +3,15 @@
 <div class="info-carousel-container">
   <h1><%= @flat.name %></h1>
   <div class="flat-info">
-    <h3>Flat Info:</h3>
-    <h5>Price per night:</h5>
-    <h5>£<%= @flat.price_per_night %></h5>
-    <h5>Capacity:</h5>
-    <h5><%= @flat.capacity %></h5>
-    <h5>Location:</h5>
-    <h5><%= @flat.location %></h5>
-    <p><%= link_to "Edit Flat", edit_flat_path(@flat), class: "edit-flat-button" %></p>
+    <h4>Flat Info:</h3>
+    <h5>Price per night: £<%= @flat.price_per_night %></h5>
+    <br>
+    <h5>Capacity: <%= @flat.capacity %> people</h5>
+    <br>
+    <h5>Location: <%= @flat.location %></h5>
+    <div class="edit-button-container">
+      <p><%= link_to "Edit Flat", edit_flat_path(@flat), class: "edit-flat-button" %></p>
+    </div>
   </div>
 
 

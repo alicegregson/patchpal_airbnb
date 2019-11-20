@@ -1,6 +1,11 @@
 .info-carousel-container {
   margin-left: 50px;
+  h1 {
+    color: #505050;
+    font-family: $headers-font;
 }
+
+
 
 .flat-info {
   background-color: white;
@@ -11,13 +16,10 @@
   padding: 20px 0 20px 20px;
   margin-bottom: 2em;
   border-radius: 5px;
-  h1 {
-    color: $gray;
-    font-family: $headers-font;
   }
-  h4 {
+  h4, h5 {
     font-family: $body-font;
-    color: $gray;
+    color: #505050;
   }
 }
 
@@ -30,6 +32,9 @@
   }
 }
 
+.edit-button-container {
+  margin-top: 2em;
+}
 .edit-flat-button {
   background-color: #EA555C;
   color: white;
