@@ -28,4 +28,17 @@
   }
 }
 
+.edit-flat-button {
+  background-color: #EA555C;
+  color: white;
+  padding: .5em 2em;
+  border-radius: 5px;
+  margin-top: 2em;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(206, 74, 78);
+  }
+}
+
 
