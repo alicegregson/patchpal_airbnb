@@ -1,12 +1,10 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  # geocoded_by :location
 
   def index
-
-    
-
-    
-    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    # @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @flats = Flat.geocoded
 
     @markers = @flats.map do |flat|
       {
@@ -14,7 +12,6 @@ class FlatsController < ApplicationController
         lng: flat.longitude
       }
     end
-
   end
 
   def show
