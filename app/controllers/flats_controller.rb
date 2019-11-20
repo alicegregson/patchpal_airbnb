@@ -1,6 +1,5 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  # geocoded_by :location
 
   def index
     # @flats = Flat.where.not(latitude: nil, longitude: nil)
