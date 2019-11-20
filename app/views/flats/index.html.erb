@@ -5,23 +5,19 @@
       <h1>Book homes, hotels, and more on Airbnb</h1>
       <div class="form-group">
         <label for="exampleInputWhere">Where</label>
-        <input type="location" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Anywhere">
+        <input type="location" class="form-control" id="exampleInputLocation" aria-describedby="locationHelp" placeholder="Anywhere">
       </div>
       <div class="form-group">
         <label for="exampleInputWhere">Check-in</label>
-        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Anywhere">
+        <input type="date" class="form-control" id="exampleInputLocation" aria-describedby="locationHelp" placeholder="Anywhere">
       </div>
       <div class="form-group">
         <label for="exampleInputWhere">Check-out</label>
-        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Anywhere">
+        <input type="date" class="form-control" id="exampleInputLocation" aria-describedby="locationHelp" placeholder="">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <label for="exampleInputAdult">Number of Adults</label>
+        <input type="number" class="form-control" id="exampleInputAdults" placeholder="Adults">
       </div>
       <button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
     </form>
@@ -69,9 +65,13 @@
   </div>
 
   <div class="info_block">
-    <div class="info_text">
-      <h1>Travelling with AirBnb</h1>
-    </div>
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
   </div>
 </div>
 
