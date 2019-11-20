@@ -1,66 +1,43 @@
+<!-- flat info card: -->
 
-<div container>
-  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-    <div class="search-form-control form-group">
-      <input class="form-control string required" type="text" name="search[query]" label="search"id="search_query" />
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Search
-     </button>
+<div class="info-carousel-container">
+  <h1><%= @flat.name %></h1>
+  <div class="flat-info">
+    <h4>Flat Info:</h3>
+    <h5>Price per night: £<%= @flat.price_per_night %></h5>
+    <br>
+    <h5>Capacity: <%= @flat.capacity %> people</h5>
+    <br>
+    <h5>Location: <%= @flat.location %></h5>
+    <div class="edit-button-container">
+      <p><%= link_to "Edit Flat", edit_flat_path(@flat), class: "edit-flat-button" %></p>
     </div>
-  </form>
+  </div>
 
 
-<h1>this is the show page</h1>
+  <!-- Image Carousel: -->
+  <div class="carousel-container">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+         <% @flat.photos.each_with_index do |photo, index| %>
+             <div class="carousel-item <%= "active" if index == 0 %>">
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+              </div>
+          <% end %>
+       </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- Map Goes Here: -->
 
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-     <% @flat.photos.each do |photo| %>
-         <div class="carousel-item active"> -->
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          </div>
-      <% end %>
-   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+  </div>
+  <!-- Add link button back to flat index once Juliette has created index page -->
 </div>
 
-
-
-
-<!-- <div class="card_main">
-
-  <div class="card">
-    <div class="card-body">
-      This is main picture of flat!!!
-    </div>
-  </div>
-
-    <div class="row">
-      <div class="card">PICTURE</div>
-
-      <div class="card">PICTURE</div>
-
-      <div class="w-100"></div>
-
-      <div class="card">PICTURE</div>
-
-      <div class="card">PICTURE</div>
-    </div>
-  </div>
-
-
- -->
-
-
-
-
-<br>
-
-<p>Find me in app/views/flats/show.html.erb</p>
