@@ -4,7 +4,9 @@
 
 .flat-info {
   background-color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-color: $light-gray;
   width: 29%;
   padding: 20px 0 20px 20px;
   margin-bottom: 2em;
