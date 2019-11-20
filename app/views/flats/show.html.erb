@@ -1,6 +1,7 @@
 <!-- flat info card: -->
 
-<div class="info-carousel-container">
+<div class="info-carousel-map-container d-flex justify-content-around">
+  <div class="info-pic-container">
   <h1><%= @flat.name %></h1>
   <div class="flat-info">
     <h4>Flat Info:</h3>
@@ -35,9 +36,16 @@
       </a>
     </div>
     <!-- Map Goes Here: -->
-
-
   </div>
-  <!-- Add link button back to flat index once Juliette has created index page -->
+  </div>
+  <div class="map-container">
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
 </div>
 

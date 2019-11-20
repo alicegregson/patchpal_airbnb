@@ -1,18 +1,17 @@
-.info-carousel-container {
+.info-carousel-map-container {
   margin-left: 50px;
   h1 {
     color: #505050;
     font-family: $headers-font;
 }
 
-
-
 .flat-info {
   background-color: white;
   border-style: solid;
   border-width: 1px;
   border-color: $light-gray;
-  width: 29%;
+  // width: 29%;
+  width: auto;
   padding: 20px 0 20px 20px;
   margin-bottom: 2em;
   border-radius: 5px;
@@ -46,6 +45,11 @@
     color: white;
     background-color: rgb(206, 74, 78);
   }
+}
+
+.map-container {
+  width: 40%;
+  margin-top: 3.5em;
 }
 
 
