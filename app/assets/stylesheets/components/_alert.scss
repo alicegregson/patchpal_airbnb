@@ -3,4 +3,15 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+
+}
+
+.alert-info {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+  background-color: #6CE274;
+  border-color: #6CE274;
+  color: white;
 }
