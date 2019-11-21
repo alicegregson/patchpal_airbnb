@@ -10,9 +10,9 @@
       <p><%= f.input :capacity %></p>
       <p><%= f.input :location %></p>
       <p><%= f.input :photos, as: :file, input_html: { multiple: true} %></p>
-      <%= f.button :submit, class: "submit-button"%>
+      <%= f.button :submit, class: "btn btn-danger btn-lg"%>
     <% end %>
   </div>
 </div>
 
- <%= link_to 'back', flats_path, class: 'bi btn btn-outline-dander btn-lg'  %>
+ <%= link_to 'back', flats_path, class: 'bi btn btn-outline-danger btn-lg'  %>
