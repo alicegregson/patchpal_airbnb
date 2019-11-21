@@ -3,12 +3,22 @@ class FlatsController < ApplicationController
 
   def index
     # @flats = Flat.where.not(latitude: nil, longitude: nil)
-    @flats = policy_scope(Flat)
+
+    # raise
+    if params[:query].present?
+      @flats = policy_scope(Flat).geocoded.search_by_location_and_capacity(params[:query])
+    else
+      @flats = policy_scope(Flat).geocoded
+    end
+
+    # @flats = Flat.geocoded
 
     @markers = @flats.map do |flat|
       {
         lat: flat.latitude,
-        lng: flat.longitude
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
   end
