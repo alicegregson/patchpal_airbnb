@@ -14,6 +14,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @home = true
     @flat = Flat.find(params[:id])
 
     @markers = [{
