@@ -13,6 +13,7 @@
     <% if policy(@flat).edit? %>
     <div class="edit-button-container">
       <p><%= link_to "Edit Flat", edit_flat_path(@flat), class: "edit-flat-button" %></p>
+      <p><%= link_to 'Destroy', flat_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "edit-flat-button"%></p>
     </div>
     <% end %>
   </div>
