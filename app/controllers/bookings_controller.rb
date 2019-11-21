@@ -11,20 +11,24 @@ class BookingsController < ApplicationController
 
   def new
     @flat = Flat.find(params[:flat_id])
+    # authorize @flat
     @booking = Booking.new
     authorize @booking
     @booking.flat = @flat
+    # authorize @flat
   end
 
   def create
     @flat = Flat.find(params[:flat_id])
+    # authorize @flat
     @booking = Booking.new(booking_params)
     authorize @booking
     @booking.flat = @flat
     @booking.user = current_user
+    # authorize @flat
 
     if @booking.save
-      redirect_to bookings_path(@booking)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
@@ -32,6 +36,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.destroy
   end
 
