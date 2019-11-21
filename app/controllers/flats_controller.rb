@@ -3,7 +3,14 @@ class FlatsController < ApplicationController
 
   def index
     # @flats = Flat.where.not(latitude: nil, longitude: nil)
-    @flats = Flat.geocoded
+    # raise
+    if params[:query].present?
+      @flats = Flat.geocoded.search_by_location_and_capacity(params[:query])
+    else
+      @flats = Flat.geocoded
+    end
+
+    # @flats = Flat.geocoded
 
     @markers = @flats.map do |flat|
       {
