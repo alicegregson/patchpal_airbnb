@@ -3,7 +3,8 @@ class FlatsController < ApplicationController
 
   def index
     # @flats = Flat.where.not(latitude: nil, longitude: nil)
-    @flats = Flat.geocoded
+    @flats = policy_scope(Flat)
+
 
     @markers = @flats.map do |flat|
       {
@@ -15,28 +16,24 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+    authorize @flat
 
     @markers = [{
         lat: @flat.latitude,
         lng: @flat.longitude
       }]
-    # @flat.geocoded
-    #  # @flat = Flat.geocoded
-    #  @marker = @flat.map do |flat|
-    #   {
-    #     lat: flat.latitude,
-    #     lng: flat.longitude
-    #   }
-    # end
   end
 
   def new
     @flat = Flat.new
+    authorize @flat
   end
 
   def create
     @flat = Flat.new(flat_params)
     @flat.user = current_user
+    authorize @flat
+
     if @flat.save
       redirect_to flat_path(@flat)
     else
