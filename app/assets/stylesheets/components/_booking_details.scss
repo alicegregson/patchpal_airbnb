@@ -1,0 +1,12 @@
+.booking-details-container {
+  background-color: white;
+  padding: 3em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $light-gray;
+  width: 40%;
+  .icon {
+    color: #7e7e7e;
+    margin: 0.5em;
+  }
+}

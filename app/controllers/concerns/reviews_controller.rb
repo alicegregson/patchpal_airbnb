@@ -6,8 +6,10 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
+    @booking = Booking.find(params[:booking_id])
+
+    @review.booking = @booking
     if @review.save
       redirect_to booking_path(@booking)
     else
