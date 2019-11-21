@@ -36,7 +36,12 @@
         <br>
         <h5>Location: <%= @flat.location %></h5>
         <div class="edit-button-container">
+          <% if policy(@flat).edit? %>
           <p><%= link_to "Edit Flat", edit_flat_path(@flat), class: "edit-flat-button" %></p>
+          <% end %>
+          <% if policy(@flat).destroy? %>
+          <p><%= link_to "Delete Flat", flat_path, method: :delete, class: "edit-flat-button" %></p>
+          <% end %>
         </div>
       </div>
 
