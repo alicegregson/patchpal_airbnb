@@ -42,12 +42,13 @@ class FlatsController < ApplicationController
 
   def edit
     @flat = Flat.find(params[:id])
+    authorize @flat
   end
 
   def update
     @flat = Flat.find(params[:id])
-    @flat.update(flat_params)
     authorize @flat
+    @flat.update(flat_params)
     redirect_to flat_path(@flat)
   end
 
