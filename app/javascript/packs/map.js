@@ -1,6 +1,7 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import places from 'places.js';
 
 const initMapbox = () => {
 
@@ -38,7 +39,19 @@ const initMapbox = () => {
   }
 };
 
-
 initMapbox();
+
+const addressInput = document.getElementById('flat_location');
+
+if (addressInput) {
+  const places = require('places.js');
+  const placesAutocomplete = places({
+    container: addressInput
+  });
+}
+
+
+
+
 
 
