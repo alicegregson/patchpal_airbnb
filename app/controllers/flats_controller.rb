@@ -14,6 +14,9 @@ class FlatsController < ApplicationController
   end
 
   def show
+    # DO NOT DELETE THIS IT IS TO DO WITH CSS LAYOUT
+    @home = true
+    # ----------------------------------------------
     @flat = Flat.find(params[:id])
     authorize @flat
 
