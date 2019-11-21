@@ -35,7 +35,7 @@
   margin-top: 2em;
 }
 .edit-flat-button {
-  background-color: #EA555C;
+  background-color: #FD1015;
   color: white;
   padding: .5em 2em;
   border-radius: 5px;
@@ -43,7 +43,8 @@
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: rgb(206, 74, 78);
+    background-color: #e50207;
+    border-color: #d80206;
   }
 }
 
