@@ -4,6 +4,10 @@ class Booking < ApplicationRecord
   has_one :review
   validates  :check_in, presence: true
   validates  :check_out, presence: true
-  validates  :price, presence: true
+# <<<<<<< add-reviews
+#   validates  :price, presence: true
+# =======
+#   # validates  :price, presence: true
+# >>>>>>> master
   validates  :number_of_guest, presence: true
 end

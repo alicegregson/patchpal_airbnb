@@ -1,6 +1,7 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import places from 'places.js';
 
 const initMapbox = () => {
 
@@ -16,8 +17,10 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
 
     markers.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
       new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
         .addTo(map);
     })
 
@@ -36,7 +39,19 @@ const initMapbox = () => {
   }
 };
 
-
 initMapbox();
+
+const addressInput = document.getElementById('flat_location');
+
+if (addressInput) {
+  const places = require('places.js');
+  const placesAutocomplete = places({
+    container: addressInput
+  });
+}
+
+
+
+
 
 
