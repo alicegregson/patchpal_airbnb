@@ -10,9 +10,11 @@
     <h5>Capacity: <%= @flat.capacity %> people</h5>
     <br>
     <h5>Location: <%= @flat.location %></h5>
+    <% if policy(@flat).edit? %>
     <div class="edit-button-container">
       <p><%= link_to "Edit Flat", edit_flat_path(@flat), class: "edit-flat-button" %></p>
     </div>
+    <% end %>
   </div>
 
 

@@ -1,7 +1,8 @@
 class FlatPolicy < ApplicationPolicy
   class Scope < Scope #only used for index
     def resolve
-      scope.geocoded
+      # Anyone can see any restaurant
+      scope.all.geocoded
     end
   end
 
