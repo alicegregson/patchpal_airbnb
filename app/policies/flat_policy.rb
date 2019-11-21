@@ -12,4 +12,15 @@ class FlatPolicy < ApplicationPolicy
   def new?
     return true
   end
+
+  def show?
+    return true
+  end
+
+  def update?
+    # refactored if / else statement:
+    # "user" is the current_user
+    # record is the argument passed to authorise the controller
+    record.user == user
+  end
 end

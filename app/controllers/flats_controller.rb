@@ -5,7 +5,6 @@ class FlatsController < ApplicationController
     # @flats = Flat.where.not(latitude: nil, longitude: nil)
     @flats = policy_scope(Flat)
 
-
     @markers = @flats.map do |flat|
       {
         lat: flat.latitude,
@@ -48,6 +47,7 @@ class FlatsController < ApplicationController
   def update
     @flat = Flat.find(params[:id])
     @flat.update(flat_params)
+    authorize @flat
     redirect_to flat_path(@flat)
   end
 
