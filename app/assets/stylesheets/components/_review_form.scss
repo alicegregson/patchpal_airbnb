@@ -1,0 +1,28 @@
+h1 {
+  font-family: $headers-font;
+  color: $gray;
+}
+
+.review-container {
+  width: 40%;
+  background-color: white;
+  padding: 3em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $light-gray;
+  border-radius: 5px;
+  h5 {
+    padding: 0;
+  }
+  .review-form-container {
+    margin-top: 0px;
+  }
+}
+
+.booking-details-container {
+    border-radius: 5px;
+  }
+
+.input-container {
+  border-radius: 5px;
+}

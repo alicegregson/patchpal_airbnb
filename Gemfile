@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker', '~> 3.5.5'
 gem 'cloudinary', '~> 1.12.0'
+gem 'pundit'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

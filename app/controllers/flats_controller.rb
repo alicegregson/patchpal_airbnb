@@ -3,11 +3,12 @@ class FlatsController < ApplicationController
 
   def index
     # @flats = Flat.where.not(latitude: nil, longitude: nil)
+
     # raise
     if params[:query].present?
-      @flats = Flat.geocoded.search_by_location_and_capacity(params[:query])
+      @flats = policy_scope(Flat).geocoded.search_by_location_and_capacity(params[:query])
     else
-      @flats = Flat.geocoded
+      @flats = policy_scope(Flat).geocoded
     end
 
     # @flats = Flat.geocoded
@@ -23,29 +24,28 @@ class FlatsController < ApplicationController
   end
 
   def show
+    # DO NOT DELETE THIS IT IS TO DO WITH CSS LAYOUT
+    @home = true
+    # ----------------------------------------------
     @flat = Flat.find(params[:id])
+    authorize @flat
 
     @markers = [{
         lat: @flat.latitude,
         lng: @flat.longitude
       }]
-    # @flat.geocoded
-    #  # @flat = Flat.geocoded
-    #  @marker = @flat.map do |flat|
-    #   {
-    #     lat: flat.latitude,
-    #     lng: flat.longitude
-    #   }
-    # end
   end
 
   def new
     @flat = Flat.new
+    authorize @flat
   end
 
   def create
     @flat = Flat.new(flat_params)
     @flat.user = current_user
+    authorize @flat
+
     if @flat.save
       redirect_to flat_path(@flat)
     else
@@ -55,17 +55,21 @@ class FlatsController < ApplicationController
 
   def edit
     @flat = Flat.find(params[:id])
+    authorize @flat
   end
 
   def update
     @flat = Flat.find(params[:id])
+    authorize @flat
     @flat.update(flat_params)
     redirect_to flat_path(@flat)
   end
 
   def destroy
     @flat = Flat.find(params[:id])
+    authorize @flat
     @flat.destroy
+
     redirect_to flats_path
   end
 
