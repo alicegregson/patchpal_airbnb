@@ -1,0 +1,20 @@
+.review-container {
+  width: 40%;
+  background-color: white;
+  // float: right;
+  // margin-right: 4em;
+  padding: 3em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $light-gray;
+  h5 {
+    padding: 0;
+  }
+  .review-form-container {
+    margin-top: 0px;
+  }
+}
+
+.input-container {
+  border-radius: 5px;
+}
