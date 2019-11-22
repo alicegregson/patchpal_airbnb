@@ -2,6 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs col-3">
+    <%= f.input :avatar, as: :file %>
     <%= f.input :first_name,
                 required: true,
                 input_html: { autocomplete: "first_name" }%>
