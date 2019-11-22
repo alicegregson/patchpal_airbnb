@@ -34,6 +34,9 @@ class FlatsController < ApplicationController
         lat: @flat.latitude,
         lng: @flat.longitude
       }]
+
+    @booking = Booking.find(params[:booking_id])
+    @review = Review.new
   end
 
   def new
