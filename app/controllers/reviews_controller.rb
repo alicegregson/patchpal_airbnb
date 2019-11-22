@@ -4,7 +4,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to flat_path(@flat)
+      authorize @review
+      redirect_to flat_path(@booking.flat)
     else
       render 'flats/show'
     end
