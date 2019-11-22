@@ -1,0 +1,9 @@
+.homepage-button {
+  text-decoration: underline;
+  color: $gray;
+  font-family: $headers-font;
+  &:hover {
+  text-decoration: none;
+  color: #757575;
+  }
+}
