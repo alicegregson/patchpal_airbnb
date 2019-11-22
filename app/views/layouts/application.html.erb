@@ -19,10 +19,11 @@
     <% unless @home %>
       <div class="push-content-down"></div>
     <% end %>
-    <% unless @footer = false %>
-      <%= yield %>
+    <%= yield %>
+
+    <% unless params[:controller] == 'bookings' && params[:action] == 'new' %>
+      <%= render 'shared/footer' %>
     <% end %>
-    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'map' %>
