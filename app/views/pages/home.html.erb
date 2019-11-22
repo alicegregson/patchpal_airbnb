@@ -44,8 +44,10 @@
         <% flat.photos.each do |photo| %>
           <%= cl_image_tag photo.key %>
         <% end %>
-        <h4><%= link_to flat.name, flat %></h4>
-        <h3><%= flat.location %></h3>
+        <div class="homepage-card-text">
+          <h4><%= link_to flat.name, flat, class: "homepage-button" %></h4>
+          <h3><i class="fas fa-map-marker-alt"></i><%= flat.location %></h3>
+        </div>
       </div>
     <!-- </div> -->
   <% end %>
