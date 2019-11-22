@@ -25,8 +25,15 @@
             </a>
           </div>
         </div>
-        <h2><%= link_to flat.name, flat, class: "homepage-button" %></h2>
-        <h3><%= flat.location %></h3>
+        <div class="info-flat">
+          <div class="information">
+            <h2><%= link_to flat.name, flat, class: "homepage-button" %></h2>
+            <h3><%= flat.location %></h3>
+          </div>
+          <div class="price">
+            <h3><%= flat.price_per_night %>£</h3>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

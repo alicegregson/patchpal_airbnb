@@ -4,6 +4,8 @@
 .container {
   width: 100%;
   margin-top: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .flats {
@@ -11,7 +13,7 @@
   grid-template-columns: 1fr;
   flex-grow: 1;
   grid-gap: 16px;
-  width: 400px;
+  width: 35%;
   margin-right: 20px;
   margin-bottom: 16px;
   top: 0;
@@ -19,21 +21,22 @@
 
 .card-location {
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 350px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: 300px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .card-location h2 {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
-  margin: 0 20px;
+  margin: 10px 30px;
   padding: 10px 0 0 10px;
 }
 
 .card-location h3 {
-  font-size: 20px;
-  margin: 0 20px;
+  font-size: 15px;
+  margin: 0 30px;
   padding: 10px 0 0 10px;
 }
 
@@ -45,7 +48,7 @@
 // }
 
 .bi {
-  margin: 0px 80px;
+  margin-left: 5%;
   padding: 10px 20px;
   font-size: 1rem;
   line-height: 1;
@@ -54,7 +57,7 @@
 
 .card-location img {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -68,13 +71,34 @@
 }
 
 .infoblock {
-  width: 600px;
+  width: 65%;
   height: 100vh;
   position: sticky;
   top: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border: 1px solid rgb(235,235,235);
 }
 
 .mapcontainer {
   width: 100%;
   // height: 100%;
 }
+
+.info-flat {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.price {
+  margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
