@@ -27,6 +27,7 @@
     <div class="info-pic-container">
       <div class="header">
         <h1><%= @flat.name %></h1>
+        <p id="location-text"><%= @flat.location %></p>
       </div>
       <div class="flat-info">
         <h4>Flat Info:</h4>
@@ -42,6 +43,7 @@
           <% if policy(@flat).destroy? %>
           <p><%= link_to "Delete Flat", flat_path, method: :delete, class: "edit-flat-button" %></p>
           <% end %>
+          <p><%= link_to 'book', new_flat_booking_path(@flat), class: 'bi btn btn-outline-danger btn-lg'  %></p>
         </div>
       </div>
 
@@ -67,4 +69,4 @@
 </div>
 
 <%= link_to 'back', flats_path, class: 'bi btn btn-outline-danger btn-lg'  %>
-<%= link_to 'book', new_flat_booking_path(@flat), class: 'bi btn btn-outline-danger btn-lg'  %>
+
