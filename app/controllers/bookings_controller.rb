@@ -12,11 +12,9 @@ class BookingsController < ApplicationController
 
   def new
     @flat = Flat.find(params[:flat_id])
-    # authorize @flat
     @booking = Booking.new
     authorize @booking
     @booking.flat = @flat
-    # authorize @flat
   end
 
   def create
