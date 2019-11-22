@@ -1,3 +1,9 @@
+// body {
+//   background-image: asset_url('travel.png');
+//   background-size: cover;
+//   }
+
+
 .booking-details-container {
   background-color: white;
   padding: 3em;
@@ -48,8 +54,17 @@
   float: right;
 }
 
+img {
+  top: -26vh;
+  right: -30vh;
+  position: absolute;
+  z-index: -100;
+  width: 98vw;
+}
 
-
-
+// .footer {
+//   position: relative;
+//   top: 60vh;
+// }
 
 

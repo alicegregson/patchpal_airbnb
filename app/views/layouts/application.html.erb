@@ -19,7 +19,9 @@
     <% unless @home %>
       <div class="push-content-down"></div>
     <% end %>
-    <%= yield %>
+    <% unless @footer = false %>
+      <%= yield %>
+    <% end %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

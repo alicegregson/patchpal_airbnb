@@ -11,6 +11,9 @@ class BookingsController < ApplicationController
   end
 
   def new
+
+    @footer = false
+
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
     authorize @booking
