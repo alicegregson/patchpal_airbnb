@@ -35,17 +35,23 @@
         <br>
         <h5>Capacity: <%= @flat.capacity %> people</h5>
         <br>
-        <h5>Location: <%= @flat.location %></h5>
-        <br>
         <h5>Review: <%= raise %></h5>
+        <h5>Description: <%= @flat.description %></h5>
+        <br>
+         <h5>Ratings: <%= @flat.rating %></h5>
         <div class="edit-button-container">
-          <% if policy(@flat).edit? %>
-          <p><%= link_to "Edit Flat", edit_flat_path(@flat), class: "edit-flat-button" %></p>
-          <% end %>
-          <% if policy(@flat).destroy? %>
-          <p><%= link_to "Delete Flat", flat_path, method: :delete, class: "edit-flat-button" %></p>
-          <% end %>
-          <p><%= link_to 'book', new_flat_booking_path(@flat), class: 'bi btn btn-outline-danger btn-lg'  %></p>
+          <div class="personal-buttons">
+            <% if policy(@flat).edit? %>
+            <p><%= link_to "Edit Flat", edit_flat_path(@flat), class: "edit-flat-button" %></p>
+            <% end %>
+            <% if policy(@flat).destroy? %>
+            <p><%= link_to "Delete Flat", flat_path, method: :delete, class: "edit-flat-button" %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="personal-buttons">
+          <%= link_to 'book', new_flat_booking_path(@flat), class: 'bin btn btn-outline-danger btn-lg'  %>
+          <%= link_to 'back', flats_path, class: 'bin btn btn-outline-danger btn-lg'  %>
         </div>
       </div>
 
@@ -66,6 +72,4 @@
   </div>
 
 </div>
-
-<%= link_to 'back', flats_path, class: 'bi btn btn-outline-danger btn-lg'  %>
 

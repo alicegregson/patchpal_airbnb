@@ -69,13 +69,16 @@
 
 .edit-button-container {
   margin-top: 2em;
+
 }
 .edit-flat-button {
+  width: 50px;
   background-color: #FD1015;
   color: white;
   padding: .5em 2em;
   border-radius: 5px;
   margin-top: 2em;
+  margin-right: 2em;
   &:hover {
     text-decoration: none;
     color: white;
@@ -104,4 +107,15 @@
   margin-top: 20px;
   border: 1px solid $light-gray;
   padding: 20px;
+}
+.bin {
+  padding: .5em 2em;
+  border-radius: 5px;
+  margin-top: 2em;
+  margin-right: 2em;
+}
+.personal-buttons {
+  display: flex;
+  //margin: 2em;
+  //margin-right: 2em;
 }
