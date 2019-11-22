@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.booking = @booking
+    @review.user = current_user
     if @review.save
       authorize @review
       redirect_to flat_path(@booking.flat)

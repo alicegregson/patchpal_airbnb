@@ -35,10 +35,15 @@
         <br>
         <h5>Capacity: <%= @flat.capacity %> people</h5>
         <br>
-        <h5>Review: <% @flat.reviews.each do |review|%></h5>
-          <p> <%= review.content %></p>
-          <% end %>
         <h5>Description: <%= @flat.description %></h5>
+        <h5>Reviews: </h5>
+        <h6>Check out what other guests thought of this flat.</h6>
+          <% @flat.reviews.each do |review|%>
+          <p>"<%= review.content %>"</p>
+          <% if review.user %>
+            <p>Written by <%= review.user.first_name %> <%= review.user.last_name %></p>
+          <% end %>
+          <% end %>
         <br>
         <div class="edit-button-container">
           <div class="personal-buttons">
