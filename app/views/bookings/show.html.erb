@@ -1,25 +1,36 @@
-<h1>Your Booking Details</h1>
+<div class="booking-details-header">
+  <h1>Your Booking Details</h1>
+</div>
 
 
 <div class="booking-card-review-container d-flex justify-content-around">
   <div class="booking-details-container">
-    <i class="fas fa-home icon"></i><%= @booking.flat.name %>
-    <br>
-    <i class="fas fa-users icon"></i><%= @booking.number_of_guest %>
-    <p>Check In: <%= @booking.check_in %></p>
-    <p>Check Out: <%= @booking.check_out %></p>
-    <p>Address: <%= @booking.flat.location %></p>
-    <p>Payment Details: £<%= @booking.price %></p>
-    <%= link_to "See Flat", flat_path, class: "btn btn-info"  %>
+    <div class="booking-flat-information">
+      <h5><%= @booking.flat.name %></h5>
+      <p>Address: <%= @booking.flat.location %></p>
+    </div>
+    <div class="check-in-out d-flex justify-content-between">
+      <p>Check In: <%= @booking.check_in %></p>
+      <p>Check Out: <%= @booking.check_out %></p>
+    </div>
+    <div class="number-of-guests d-flex justify-content-between">
+      <p>Guests:</p>
+      <%= @booking.number_of_guest %>
+    </div>
+    <div class="payment-details d-flex justify-content-between">
+      <p>Payment Details:</p>
+      <p>£<%= @booking.price %></p>
+    </div>
+    <%= link_to "See Flat", flat_path, class: "dark-blue-button"  %>
   </div>
 
   <div class="review-container">
     <h5>Come back from your trip? Add Your Review Here:</h5>
     <div class="review-form-container">
       <%= simple_form_for [@booking, @review] do |f| %>
-        <div class="input-container"><%= f.input :content, label: "Write your review here" %></div>
-        <div class="input-container"><%= f.input :rating %></div>
-        <%= f.submit "add a review", class: "btn btn-primary" %>
+        <%= f.input :content, label: "Write your review here" %>
+        <%= f.input :rating %>
+        <%= f.submit "add a review", class: "btn btn-danger" %>
       <% end %>
     </div>
   </div>
