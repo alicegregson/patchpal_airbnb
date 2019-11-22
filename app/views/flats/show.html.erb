@@ -35,6 +35,9 @@
         <br>
         <h5>Capacity: <%= @flat.capacity %> people</h5>
         <br>
+        <h5>Review: <% @flat.reviews.each do |review|%></h5>
+          <p> <%= review.content %></p>
+          <% end %>
         <h5>Description: <%= @flat.description %></h5>
         <br>
         <div class="edit-button-container">
