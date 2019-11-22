@@ -9,15 +9,8 @@
         <% flat.photos.each do |photo| %>
           <%= cl_image_tag photo.key %>
         <% end %>
-        <h2><%= flat.name %></h2>
+        <h4><%= link_to flat.name, flat, class: "homepage-button" %></h4>
         <h3><%= flat.location %></h3>
-        <p><%= link_to 'Show', flat %></p>
-        <% if policy(@flat).edit? %>
-        <p><%= link_to 'Edit', edit_flat_path(flat) %></p>
-        <% end %>
-        <% if policy(@flat).delete? %>
-        <p><%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        <% end %>
       </div>
     <% end %>
   </div>
