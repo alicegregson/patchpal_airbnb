@@ -14,7 +14,7 @@
       <p>Check Out: <%= @booking.check_out %></p>
     </div>
     <div class="number-of-guests d-flex justify-content-between">
-      <p>Number of Guests:</p>
+      <p>Guests:</p>
       <%= @booking.number_of_guest %>
     </div>
     <div class="payment-details d-flex justify-content-between">
@@ -28,8 +28,8 @@
     <h5>Come back from your trip? Add Your Review Here:</h5>
     <div class="review-form-container">
       <%= simple_form_for [@booking, @review] do |f| %>
-        <div class="input-container"><%= f.input :content, label: "Write your review here" %></div>
-        <div class="input-container"><%= f.input :rating %></div>
+        <%= f.input :content, label: "Write your review here" %>
+        <%= f.input :rating %>
         <%= f.submit "add a review", class: "btn btn-danger" %>
       <% end %>
     </div>
