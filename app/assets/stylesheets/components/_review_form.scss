@@ -14,9 +14,7 @@ h1 {
   h5 {
     padding: 0;
   }
-  .review-form-container {
-    margin-top: 0px;
-  }
+
 }
 
 .booking-details-container {
@@ -26,3 +24,17 @@ h1 {
 .input-container {
   border-radius: 5px;
 }
+
+#new_review {
+    // margin-top: 0px;
+    // padding: 0px;
+  }
+
+  .review_content {
+    margin: 0%;
+    padding: 0%;
+    .text {
+      padding: 0%;
+      margin: 0%;
+    }
+  }
