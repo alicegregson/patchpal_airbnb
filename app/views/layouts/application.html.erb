@@ -15,13 +15,15 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+
     <% unless @home %>
       <div class="push-content-down"></div>
     <% end %>
     <%= yield %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'map' %>
-    <%#= render 'shared/footer' %>
+
   </body>
 </html>
