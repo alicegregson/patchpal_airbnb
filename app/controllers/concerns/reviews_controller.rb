@@ -8,8 +8,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    authorize @review
     @booking = Booking.find(params[:booking_id])
+    @review.booking = @booking
+    authorize @review
 
     @review.booking = @booking
     if @review.save

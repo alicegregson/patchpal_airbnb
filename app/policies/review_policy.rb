@@ -6,11 +6,11 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    user_booked?
   end
 
   def new?
-    return true
+    user_booked?
   end
 
   def show?
@@ -18,14 +18,16 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def update?
-    # refactored if / else statement:
-    # "user" is the current_user
-    # record is the argument passed to authorise the controller
-    user_is_owner?
+    user_booked?
   end
 
   def destroy?
-    user_is_owner?
+    user_booked?
   end
+
+  private
+    def user_booked?
+      record.booking.user == user
+    end
 
 end
