@@ -6,10 +6,26 @@
   <div class="flats">
     <% @flats.each do |flat| %>
       <div class="card-location">
-        <% flat.photos.each do |photo| %>
-          <%= cl_image_tag photo.key %>
-        <% end %>
-        <h4><%= link_to flat.name, flat, class: "homepage-button" %></h4>
+        <div class="carousel-container">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <% flat.photos.each_with_index do |photo, index| %>
+                <div class="carousel-item <%= "active" if index == 0 %>">
+                  <%= cl_image_tag photo.key, gravity: "center", crop: "scale" %>
+                </div>
+              <% end %>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <h2><%= link_to flat.name, flat, class: "homepage-button" %></h2>
         <h3><%= flat.location %></h3>
       </div>
     <% end %>
