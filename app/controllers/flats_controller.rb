@@ -2,16 +2,11 @@ class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # @flats = Flat.where.not(latitude: nil, longitude: nil)
-
-    # raise
     if params[:query].present?
       @flats = policy_scope(Flat).geocoded.search_by_location_and_capacity(params[:query])
     else
       @flats = policy_scope(Flat).geocoded
     end
-
-    # @flats = Flat.geocoded
 
     @markers = @flats.map do |flat|
       {
@@ -35,7 +30,8 @@ class FlatsController < ApplicationController
         lng: @flat.longitude
       }]
 
-    @booking = Booking.find(params[:booking_id])
+    # @booking = Booking.find(params[:booking_id])
+    @booking = Booking.new
     @review = Review.new
   end
 
